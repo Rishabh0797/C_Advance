@@ -1,0 +1,57 @@
+                                             //counting swaps
+#include<stdio.h>
+void create_array(int [],int);
+void  display_array(int [],int);
+void bubble_sort(int [],int);
+
+int main()
+{
+    int arr[50],size,queries,i;
+    printf("Enter number of queries:");
+    scanf("%d",&queries);
+    for(i=0;i<queries;i++)
+    {
+        printf("enter size of array :");
+         scanf("%d",&size);
+       create_array(arr,size);
+       bubble_sort(arr,size);
+       display_array(arr,size);
+    }
+    return 0;
+}
+void create_array(int a[],int n)
+{
+    int i;
+    printf("Enter your array : ");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+}
+void display_array(int a[],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+}
+void bubble_sort(int a[],int n)
+{
+    int i,j,temp,flag=0;
+    for(i=1;i<n;i++)
+    {
+        for(j=0;j<(n-i);j++)
+        {
+            if(a[j]>a[j+1])
+            {
+                temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+                flag++;
+            }
+        }
+    }
+    printf("Number of swaps:%d\n",flag);
+}
+                                             
