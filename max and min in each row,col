@@ -1,0 +1,76 @@
+                            //max and min in each row and column
+#include<stdio.h>
+void create_array(int [50][50],int,int);
+void display_array(int [50][50],int,int);
+void row(int [50][50],int,int);
+void column(int [50][50],int,int);
+int main()
+{
+    int arr[50][50],rows,columns;
+    printf("Enter rows and columns :");
+    scanf("%d %d",&rows,&columns);
+    create_array(arr,rows,columns);
+    display_array(arr,rows,columns);
+    row(arr,rows,columns);
+    column(arr,rows,columns);
+    return 0;
+}
+void create_array(int arr[50][50],int r,int c)
+{
+    int i,j;
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&arr[i][j]);
+        }
+    }
+}
+void display_array(int arr[50][50],int r,int c)
+{
+    int i,j;
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+    }
+}
+void row(int arr[50][50],int r,int c)
+{
+    int i,j,max,min;
+    for(i=0;i<r;i++)
+    {
+        max=arr[i][i];
+        min=arr[i][i];
+        for(j=0;j<c;j++)
+        {
+            if(arr[i][j]>max)
+            max=arr[i][j];
+            if(arr[i][j]<min)
+            min=arr[i][j];
+        }
+        printf("In row %d , minimum :%d and maximum :%d\n",i,min,max);
+    }
+    
+}
+void column(int arr[50][50],int r,int c)
+{
+    int i,j=0,max,min;
+    for(i=0;i<c;i++)
+    {
+        max=arr[j][i];
+        min=arr[j][i];
+        for(j=0;j<r;j++)
+        {
+            if(arr[j][i]>max)
+             max=arr[j][i];
+            if(arr[j][i]<min)
+             min=arr[j][i];
+        }
+        printf("In column %d , minimum :%d and maximum :%d\n",i,min,max);
+        j=0;
+    }
+}                            
