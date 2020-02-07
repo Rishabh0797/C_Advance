@@ -15,6 +15,6 @@ int main()
        a[j]=temp;
        j--;
    }
-   printf("String in upper case :%s",a);
+   printf("String :%s",a);
    return 0;
 }
