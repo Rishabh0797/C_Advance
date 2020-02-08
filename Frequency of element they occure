@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<malloc.h>
+void create_array(int *,int);
+void display_array(int *,int);
+int largest(int *,int);
+void duplicate_finder(int *,int *,int,int);
+void order_occurrence(int *,int *,int *,int,int);
+int main()
+{
+    int n,*ptr1,*ptr2,large,*ptr3;
+    printf("Enter size of array :");
+    scanf("%d",&n);
+    ptr1=(int*)calloc(n,sizeof(int));
+    create_array(ptr1,n);
+    display_array(ptr1,n);
+    large=largest(ptr1,n);
+    large++;               //we need index till that element
+    ptr2=(int*)calloc(large,sizeof(int));
+    duplicate_finder(ptr1,ptr2,n,large);
+    ptr3=(int*)calloc(large,sizeof(int));
+    printf("\n");
+    order_occurrence(ptr1,ptr2,ptr3,n,large);
+    return 0;
+}
+void create_array(int *ptr1,int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",ptr1+i);
+    }
+}
+void display_array(int *ptr1,int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",ptr1[i]);
+    }
+}
+int largest(int *p,int n)
+{
+    int i,max;
+    max=p[0];
+    for(i=1;i<n;i++)
+    {
+        if(max<(*(p+i)))
+        max=p[i];
+    }
+    return(max);
+}
+void duplicate_finder(int *ptr1,int*ptr2,int n,int lar)
+{
+    int i,num;
+    for(i=0;i<n;i++)
+    {
+        ptr2[*(ptr1+i)]++;
+    }
+}
+void order_occurrence(int *ptr1,int *ptr2,int *ptr3,int n,int large)
+{
+    int i;
+    for(i=0;i<large;i++)
+    {
+        if(ptr2[*(ptr1+i)]>0 && ptr3[*(ptr1+i)]==0)
+        {
+            ptr3[*(ptr1+i)]=1;
+            printf("Frequency of element %d is %d\n",*(ptr1+i),ptr2[*(ptr1+i)]);
+        }
+        
+    }
+}
