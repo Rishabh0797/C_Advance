@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+    char a[20]="bess",b[20]="bad";
+    printf("%d",strcmp(a,b));
+
+    return 0;
+}
