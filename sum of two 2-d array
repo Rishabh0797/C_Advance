@@ -1,0 +1,59 @@
+#include<stdio.h>
+void create_array(int [10][10],int,int);
+void display_array(int [10][10],int,int);
+void addition_of_array(int [10][10],int [10][10],int [10][10],int,int);
+
+int main()
+{
+    int record1[10][10],record2[10][10],student,subject,final_marks[10][10];
+    printf("enter student and subject =");
+    scanf("%d",&student);  //rows
+    scanf("%d",&subject);  //column
+    printf("\nEnter elements of record1 =");
+    create_array(record1,student,subject);
+     printf("\nEnter elements of record2 =");
+    create_array(record2,student,subject);
+    printf("\nRecord1 =\n");
+    display_array(record1,student,subject);
+    printf("Record2 =\n");
+    display_array(record2,student,subject);
+    addition_of_array(record1,record2,final_marks,student,subject);
+    printf("final result=\n");
+     display_array(final_marks,student,subject);
+    return 0;
+
+}
+void create_array(int a[10][10],int stu,int sub)
+{
+    int i,j;
+    for(i=0;i<stu;i++)
+    {
+        for(j=0;j<sub;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+}
+void display_array(int a[10][10],int stu,int sub)
+{
+    int i,j;
+    for(i=0;i<stu;i++)
+    {
+        for(j=0;j<sub;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+}
+void addition_of_array(int a1[10][10],int a2[10][10],int a3[10][10],int stud,int sub)
+{
+    int i,j;
+    for(i=0;i<stud;i++)
+    {
+        for(j=0;j<sub;j++)
+        {
+            a3[i][j]=a1[i][j]+a2[i][j];
+        }
+    }
+}
