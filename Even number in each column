@@ -1,0 +1,54 @@
+#include<stdio.h>
+void create_array(int [10][10],int,int);
+void display_array(int [10][10],int,int);
+void even_number(int [10][10],int,int);
+int main()
+{
+    int a[10][10],row,col;
+    printf("Enter rows and columns =");
+    scanf("%d",&row);
+    scanf("%d",&col);
+    create_array(a,row,col);
+    printf("\n");
+    display_array(a,row,col);
+    even_number(a,row,col);
+    return 0;
+}
+void create_array(int a[10][10],int row,int col)
+{
+    int i,j;
+    for(i=0;i<row;i++)
+    {
+        for(j=0;j<col;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+}
+void display_array(int a[10][10],int row,int col)
+{
+    int i,j;
+    for(i=0;i<row;i++)
+    {
+        for(j=0;j<col;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+}
+void even_number(int a[10][10],int row,int col)
+{
+    int i,j;
+    for(i=0;i<col;i++)
+    {
+        printf("\nEven number in col %d=",i+1);
+        for(j=0;j<row;j++)
+        {
+            if(a[j][i]%2==0)
+            {
+                printf(" %d",a[j][i]);
+            }
+        }
+    }
+}
