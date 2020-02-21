@@ -1,0 +1,48 @@
+#include<stdio.h>
+void create_array(int [],int);
+void display_array(int [],int);
+void insertion_sort(int [],int);
+int main()
+{
+    int a[50],num;
+    printf("Enter size of array :");
+    scanf("%d",&num);
+    printf("\nEnter element of array :");
+    create_array(a,num);
+    display_array(a,num);
+    insertion_sort(a,num);
+    printf("\nSorted array :");
+     display_array(a,num);
+    return 0;
+}
+void create_array(int a[],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+}
+void display_array(int a[],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+}
+void insertion_sort(int a[],int n)
+{
+    int i,j,temp;
+    for(i=1;i<n;i++)
+    {
+        j=i-1;
+        temp=a[i];
+        while(a[j]>temp && j!=-1)
+        {
+            a[j+1]=a[j];
+            j--;
+        }
+        a[j+1]=temp;
+    }
+}
