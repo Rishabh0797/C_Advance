@@ -1,0 +1,52 @@
+#include<stdio.h>
+void create_array(int [10][10],int,int);
+void display_array(int [10][10],int,int);
+void interchange_col(int [10][10],int,int);
+int main()
+{
+    int a[10][10],i,row,col;
+    printf("Enter rows and columns = ");
+    scanf("%d %d",&row,&col);
+    create_array(a,row,col);
+    printf("\n");
+    display_array(a,row,col);
+    interchange_col(a,row,col);
+    printf("\nResult\n");
+    display_array(a,row,col);
+    return 0;
+}
+void create_array(int a[10][10],int r,int c)
+{
+    int i,j;
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+             scanf("%d",&a[i][j]);
+        }
+    }
+}
+void display_array(int a[10][10],int r,int c)
+{
+    int i,j;
+    for(i=0;i<r;i++)
+    {
+        printf("Row:%d = ",i);
+        for(j=0;j<c;j++)
+        {
+             printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+} void interchange_col(int a[10][10],int r,int c)
+{
+    int n1,n2,i,temp;
+    printf("Enter col 1 and col 2 = ");
+    scanf("%d %d",&n1,&n2);
+    for(i=0;i<r;i++)
+    {
+        temp=a[i][n1];
+        a[i][n1]=a[i][n2];
+        a[i][n2]=temp;
+    }
+}
