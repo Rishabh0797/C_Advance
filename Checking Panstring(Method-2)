@@ -1,0 +1,28 @@
+
+#include <stdio.h>
+
+int main()
+{
+   char a[50],ar;
+   int i,flag=0;
+   scanf("%[^\n]",a);
+   for(ar=97;ar<=122;ar++)
+   {
+       flag=0;
+       for(i=0;a[i]!='\0';i++)
+       {
+           if(a[i]>=65 && a[i]<=90)
+           a[i]+=32;
+           if(a[i]==ar)
+           flag=1;
+       }
+       if(flag==0)
+       {
+           printf("Not a panstring");
+           return 0;
+       }
+   }
+   printf("It is a pan string");
+
+    return 0;
+}
