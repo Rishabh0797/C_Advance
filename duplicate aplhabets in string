@@ -1,0 +1,50 @@
+#include<stdio.h>
+int main()
+{
+    char str[20]="ZZbbBhh HcCdAAa",final_str[20]={0};
+    int i=0,j=0,track_lower[26]={0},track_upper[26]={0},fresh_small[26]={0},fresh_upper[26]={0};
+     printf("%s",final_str);
+    while(str[i]!='\0')
+    {
+        if(str[i]>=65 && str[i]<=90)
+        {
+            track_upper[str[i]-65]++;
+        }
+        if(str[i]>=97 && str[i]<=122)
+        {
+            track_lower[str[i]-97]++;
+        }
+        i++;
+    }
+    i=0;
+    while(str[i]!='\0')
+    {
+        if(str[i]==32)
+        {
+            final_str[j]=str[i];
+            j++;
+        }
+        else if(str[i]>=65 && str[i]<=90)
+        {
+            if(fresh_upper[str[i]-65]==0 && track_upper[str[i]-65]>1)
+            {
+                fresh_upper[str[i]-65]=1;
+                final_str[j]=str[i];
+                j++;
+            }
+        }
+         else if(str[i]>=97 && str[i]<=122)
+        {
+            if(fresh_small[str[i]-97]==0 && track_lower[str[i]-97]>1)
+            {
+                fresh_small[str[i]-97]=1;
+                final_str[j]=str[i];
+                j++;
+            }
+        }
+    }
+    final_str[j]='\0';
+    printf("%s",final_str);
+    return 0;
+   
+}
