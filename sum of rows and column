@@ -1,0 +1,70 @@
+#include<stdio.h>
+void create_array(int [50][50],int,int);
+void display_array(int [50][50],int,int);
+void sum_of_rows(int [50][50],int,int);
+void sum_of_columns(int [50][50],int,int);
+
+int main()
+{
+    int arr[50][50],rows,columns;
+    printf("Enter rows and columns:");
+    scanf("%d %d",&rows,&columns);
+    create_array(arr,rows,columns);
+    display_array(arr,rows,columns);
+     sum_of_rows(arr,rows,columns);
+     sum_of_columns(arr,rows,columns);
+    return 0;
+}
+void create_array(int arr[50][50],int r,int c)
+{
+    int i,j;
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&arr[i][j]);
+        }
+    }
+}
+void display_array(int arr[50][50],int r,int c)
+{
+    int i,j;
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+    }
+}
+void sum_of_rows(int arr[50][50],int r,int c)
+{
+    int i,j,sum=0;
+      printf("Sum 0f rows are :");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            sum+=arr[i][j];
+        }
+        printf("%d ",sum);
+        sum=0;
+    }
+    printf("\n");
+}
+void sum_of_columns(int arr[50][50],int r,int c)
+{
+    int i,j,sum=0;
+    printf("Sum 0f column are :");
+    for(i=0;i<c;i++)
+    {
+        for(j=0;j<r;j++)
+        {
+            sum+=arr[j][i];
+        }
+        printf("%d ",sum);
+        sum=0;
+    }
+    printf("\n");
+}
