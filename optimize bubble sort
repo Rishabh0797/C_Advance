@@ -1,0 +1,55 @@
+#include<stdio.h>
+void create_array(int [],int);
+void display_array(int [],int);
+void bubble_sort(int [],int);
+
+int main()
+{
+    int a[50],n;
+    printf("Enter size of array:");
+    scanf("%d",&n);
+    create_array(a,n);
+    bubble_sort(a,n);
+     display_array(a,n);
+    return 0;
+}
+void create_array(int a[],int n)
+{
+    int i; 
+    printf("Enter your array : ");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+}
+void display_array(int a[],int n)
+{
+    int i;
+   printf("Your sorted array : ");
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+}
+void bubble_sort(int a[],int n)
+{
+    int i,j,temp,flag=0;
+    for(i=1;i<n;i++)
+    {
+        flag=0;
+        for(j=0;j<(n-i);j++)                   //In this,variable flag is used to controll number of passes as loop will execute till
+        {                                        // array becomes sorted.Once array becomes sorted it break out of loop
+            if(a[j]>a[j+1])
+            {
+                temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+                flag=1;
+            }
+        }
+        if(flag==0)
+        break;
+    }
+}
+
+
