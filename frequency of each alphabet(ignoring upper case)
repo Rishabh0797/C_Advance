@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+    char arr[50];
+    int i=0,t[26]={0},s[26]={0};
+    scanf("%[^\n]s",arr);
+    while(arr[i]!='\0')
+    {
+        if(arr[i]>=65 && arr[i]<=90)
+        arr[i]+=32;
+       s[arr[i]-97]++;
+       i++;
+    }
+    for(i=0;arr[i]!='\0';i++)
+    {
+        if(t[arr[i]-97]==0 && s[arr[i]-97]>=1)
+        {
+            printf("'%c'is %d  ",arr[i],s[arr[i]-97]);
+            t[arr[i]-97]=1;
+        }
+    }
+}

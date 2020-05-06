@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+    char a[20];
+    int i,num;
+    printf("Enter your string :");
+    scanf("%[^\n]",a);
+    printf("\nPress 1 for upper case and Press 2 for lower case :");
+    scanf("%d",&num);
+    if(num==1)
+    {
+        for(i=0;a[i]!='\0';i++)
+       {
+        if(a[i]>=97 && a[i]<=122)
+         a[i]-=32;
+       }
+    }
+    else
+    {
+        for(i=0;a[i]!='\0';i++)
+       {
+         if(a[i]>=65 && a[i]<=90)
+          a[i]+=32;
+        }
+    }
+   
+   printf("String in upper case :%s",a);
+   return 0;
+}
