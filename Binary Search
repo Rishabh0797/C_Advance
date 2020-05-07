@@ -1,0 +1,82 @@
+#include<stdio.h>
+void create_array(int [],int);
+void display_array(int [],int);
+void sort_array(int [],int);
+int binary_search(int [],int);
+
+int main()
+{
+    int size,arr[50],result=-1;
+    printf("Enter size of array :");
+    scanf("%d",&size);
+    create_array(arr,size);
+    display_array(arr,size);
+    printf("\n");
+    sort_array(arr,size);
+    display_array(arr,size);
+    result=binary_search(arr,size);
+    if(result==-1)
+    {
+        printf("number does not found");
+    }
+    else
+    printf("number found at %d index",result);
+    return 0;
+}
+void create_array(int arr[],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+}
+void display_array(int arr[],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+}
+int binary_search(int arr[],int n)
+{
+    int beg=0,end=(n-1),mid,num,save=-1;
+    printf("\nEnetr your number you want to search :");
+    scanf("%d",&num);
+    while(beg<=end)
+    {
+        mid=(beg+end)/2;
+        if(arr[mid]==num)
+        {
+            save=mid;
+            break;
+        }
+        else if(arr[mid]>num)
+        {
+            end=mid-1;
+        }
+        else
+        {
+            beg=mid+1;
+        }
+    }
+    return(save);
+}
+void sort_array(int arr[],int n)
+{
+    int i,j,temp;
+    for(i=0;i<(n-1);i++)
+    {
+        for(j=0;j<(n-i-1);j++)
+        {
+            if(arr[j]>arr[j+1])
+            {
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+            
+        }
+    }
+}
