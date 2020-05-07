@@ -1,0 +1,77 @@
+                                  //linear_search using function,pointers and array
+#include <stdio.h>
+void create_arr(int [],int );
+void display_arr(int [],int );
+void linear_search(int [],int *);
+void delete_arr(int [],int *,int i);
+void insert_arr(int [],int *,int);
+
+int main()
+{
+   int a[50],n;
+   scanf("%d",&n);                        //size of array
+   create_arr(a,n);          
+   display_arr(a,n);
+   linear_search(a,&n);
+      display_arr(a,n);
+    return 0;
+}
+void create_arr(int p[],int n)
+{
+    int i;                                 //Array Initialisation of array
+    for(i=0;i<(n);i++)
+    {
+        scanf("%d",&p[i]);
+    }
+}
+void display_arr(int p[],int n)
+{
+    int i;
+    for(i=0;i<(n);i++)                   //Display array
+    {
+        printf("%d ",p[i]);
+    }
+}
+void linear_search(int p[],int *n)
+{                                          //Linear search perfomed
+    int i,num,flag=0;
+    printf("Number to be search=");
+    scanf("%d",&num);
+    for(i=0;i<(*n);i++)
+    {
+        if(p[i]==num)
+        {
+            flag=1;
+            break;
+        }
+    }
+    if(flag==1)
+    {
+        delete_arr(p,n,i);
+    }
+    else
+    insert_arr(p,n,num);
+}
+void delete_arr(int p[],int *n,int i)
+{                                           //Deletion in array
+    int j,temp;
+    for(j=i;j<(*n);j++)
+    {
+        p[j]=p[j+1];
+       
+    }
+    (*n)-=1;
+}
+void insert_arr(int p[],int *n,int num)
+{
+    (*n)+=1;                                      //Insertion in array
+    printf("\nIndex you want to add=");          
+    int loc,i;
+    scanf("%d",&loc);
+   for(i=((*n)-1);i<=loc;i--)
+   {
+       p[i+1]=p[i];
+   }
+   p[loc]=num;
+   
+}

@@ -1,0 +1,82 @@
+                                               //Rotating array
+#include<stdio.h>
+void clockwise_(int [],int);
+void create_array(int [],int);
+void display_array(int [],int);
+void anticlockwise_(int [],int);
+
+int main()
+{
+    int size,arr[50],test_case=0,queries;
+    int ch;
+    printf("Enter your size of array =");
+    scanf(" %d",&size);
+    create_array(arr,size);
+    printf("Enter number of queries =");
+    scanf("%d",&queries);
+    while(test_case<queries)
+    {
+        printf("\n'1'=clockwise and '2'=anticlockwise\tEnter your choice=\n");
+        scanf(" %d",&ch);
+        if(ch==1)
+        {
+            clockwise_(arr,size);
+        } 
+        else  if(ch ==2)
+        {
+            anticlockwise_(arr,size);
+        }
+        test_case++;
+    }
+    display_array(arr,size);
+    return 0;
+}
+void create_array(int arr[],int size)
+{
+    int i;
+    printf("Initialise Array\n");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+}
+void display_array(int arr[],int size)
+{
+    int i;
+     for(i=0;i<size;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+}
+void clockwise_(int a[],int n)
+{
+    int num,i,temp,j;
+    printf("\nEnetr number of times you want to operate = ");
+    scanf("%d",&num);
+    for(i=0;i<num;i++)
+    {
+        temp=0;
+        temp=a[0];
+        for(j=0;j<n;j++)
+        {
+            a[j]=a[j+1];
+        }
+        a[n-1]=temp;
+    }
+}
+void anticlockwise_(int arr[],int size)
+{
+    int num,temp,i,j;
+       printf("\nEnetr number of times you want to operate = ");
+    scanf("%d",&num);
+    for(i=0;i<num;i++)
+    {
+        temp=arr[size-1];
+        for(j=(size-1);j>0;j--)
+        {
+            arr[j]=arr[j-1];
+        }
+        arr[0]=temp;
+    }
+}
+

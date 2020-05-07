@@ -1,0 +1,30 @@
+#include<stdio.h>
+void create_array(int [],int);
+void sum_array(int [],int);
+
+int main()
+{
+    int arr[50],size;
+    printf("Enter size of array:");
+    scanf("%d",&size);
+    create_array(arr,size);
+    sum_array(arr,size);
+    return 0;
+}
+void create_array(int arr[],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+}
+void sum_array(int arr[],int n)
+{
+    int i,sum=0;
+    for(i=0;i<n;i++)
+    {
+        sum+=arr[i];
+    }
+    printf("Sum of an array is = %d",sum);
+}
