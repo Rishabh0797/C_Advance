@@ -1,0 +1,18 @@
+
+#include <stdio.h>
+
+int main()
+{
+   int i,a,fact=1,j;
+   printf("Enter number whose factorial you want:");
+   scanf("%d",&a);
+   j=a;
+   for(i=0;a!=1;i++)
+   {
+       fact*=(a);
+       a=a-1;
+   }
+   printf("Factorial of number %d is %d",j,fact);
+
+    return 0;
+}
