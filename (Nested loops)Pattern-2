@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Enter  the number :");
+    int i,j,num,a;
+    scanf("%d",&num);                                   //if num=5   54321
+    printf("\n");                                       //           5432
+    a=num;                                              //           543
+    for(i=num;i>=0;i--)                                 //           54             
+    {                                                   //           5
+        for(j=0;j-a!=0;j++)
+        {
+            printf("%d",num-j);
+            
+        }
+        a--;
+        printf("\n");
+    }
+    return 0;
+}
