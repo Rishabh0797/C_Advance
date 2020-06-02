@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Enter your number :");
+    int i,j,num,a=1,b,l;
+    scanf("%d",&num);
+    b=num;
+    for(i=1;i<=num;i++)
+    {
+        printf("\n");
+        for(j=1;j<b;j++)
+        {
+            printf(" ");
+        }
+        for(j=i;j<=a;j++)
+        {
+            printf("%d",j);
+        }
+        for(l=a-1;l>=i;l--)
+        {
+            printf("%d",l);
+        }
+        b--;
+        a+=2;
+    }
+    return 0;
+}
