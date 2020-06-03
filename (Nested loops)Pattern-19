@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+    int i,j,n;
+    n=10;
+    for(i=1;i<=n;i++)
+    {
+        printf("\n");                           //X-mas Tree
+        for(j=1;j<=(n-i)+4;j++)
+        {
+            printf(" ");
+        }
+        for(j=1;j<=i;j++)
+        {                                  
+            printf("*");
+        }
+        for(j=1;j<i;j++)
+        {
+            printf("*");
+        }
+    }
+    for(i=1;i<=3;i++)
+    {
+        printf("\n");
+        for(j=1;j<=3+4;j++)
+        {
+            printf(" ");
+        }
+        for(j=1;j<=n+3;j++)
+        {
+            printf("*");
+        }
+    }
+    
+
+    return 0;
+}
