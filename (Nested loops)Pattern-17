@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Enter your number :");
+    int i,j,num,a,b,l;
+    scanf("%d",&num);                    //num should be one-digit
+    a=num;
+    b=num;
+    for(i=1;i<=num;i++)
+    {
+        printf("\n");
+        for(j=1;j<=b;j++)  
+        {
+            printf("%d",j);
+        }
+        for(j=i-1;j>0;j--)
+        {
+            printf("  ");
+        }
+        for(l=a;l>0;l--)
+        {
+            printf("%d",l);
+        }
+        a--;
+        b--;
+    }
+    return 0;
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Eter your number :");
+    int i,j,num;
+    scanf("%d",&num);
+    for(i=num;i>=0;i--)                  //54321
+    {                                    //4321 
+        for(j=i;j>=1;j--)                //321 
+        {                                //21
+            printf("%d",j);              //1......
+        }
+        printf("\n");
+    }
+    return 0;
+}
