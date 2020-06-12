@@ -1,0 +1,21 @@
+#include <stdio.h>
+int power(int,int);
+int main()
+{
+    int x,y,sum=0;
+    printf("Enter number :");
+    scanf("%d",&x);
+    printf("Enter power :");             //power of a number
+    scanf("%d",&y);
+    sum=power(x,y);
+    printf("Your answer is : %d",sum);
+    return 0;
+}
+int power(int x,int y)
+{
+    int sum=0;
+    if(y==0)
+    return(1);
+    else
+    return x * power(x,y-1);
+}
