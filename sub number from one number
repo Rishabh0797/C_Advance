@@ -1,0 +1,38 @@
+#include <stdio.h>
+int sub_test(int);
+
+int main()
+{
+    int n,sub=0;
+    printf("Enter your number :");
+    scanf("%d",&n);
+   sub=n;
+  sub=sub_test(sub);
+  if(sub<0)
+    {
+        printf("Number is less than 0(negative)");
+    }
+    else
+  printf("Final number : %d",sub);
+    return 0;
+}
+
+int sub_test(int sub)
+{
+    char a;
+    printf("Enter (y) for Yes and (n) for NO : ");
+    scanf(" %c",&a);
+    if(a=='n')
+    {
+        return sub;
+    }
+    else
+    {
+        int x;
+        printf("Enter number you want to add in sum : ");
+        scanf(" %d",&x);
+        sub=sub-x;
+        return sub_test(sub);
+      
+    }
+}
