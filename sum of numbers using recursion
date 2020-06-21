@@ -1,0 +1,32 @@
+#include <stdio.h>
+int sum_test(int);
+
+int main()
+{
+    int n,sum=0;
+    printf("Enter your number :");
+    scanf("%d",&n);
+   sum=n;
+  sum=sum_test(sum);
+  printf("Final SUM : %d",sum);
+    return 0;
+}
+
+int sum_test(int sum)
+{
+    char a;
+    printf("Enter (y) for Yes and (n) for NO : ");
+    scanf(" %c",&a);
+    if(a=='n')
+    {
+        return sum;
+    }
+    else
+    {
+        int a;
+        printf("Enter number you want to add in sum : ");
+        scanf(" %d",&a);
+        sum=sum+a;
+        return sum_test(sum);
+    }
+}

@@ -1,0 +1,32 @@
+#include <stdio.h>
+int mul_test(int);
+
+int main()
+{
+    int n,mul=0;
+    printf("Enter your number :");
+    scanf("%d",&n);
+   mul=n;
+  mul=mul_test(mul);
+  printf("Final Number : %d",mul);
+    return 0;
+}
+
+int mul_test(int mul)
+{
+    char a;
+    printf("Enter (y) for Yes and (n) for NO : ");
+    scanf(" %c",&a);
+    if(a=='n')
+    {
+        return mul;
+    }
+    else
+    {
+        int a;
+        printf("Enter number you want to add in sum : ");
+        scanf(" %d",&a);
+        mul=mul*a;
+        return mul_test(mul);
+    }
+}

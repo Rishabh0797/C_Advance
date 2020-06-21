@@ -1,0 +1,24 @@
+#include<stdio.h>
+int sum_digit(int);
+
+int main()
+{
+    int n,sum=0;
+    printf("Enter number : ");
+    scanf("%d",&n);
+    sum=sum_digit(n);
+    printf("SUM of a digit of a number : %d",sum);
+    return 0;
+}
+
+int sum_digit(int num)
+{
+    if(num==0)
+    {
+        return 0;
+    }
+    else
+    {
+        return(num%10 + sum_digit(num/10));
+    }
+}
